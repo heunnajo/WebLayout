@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Layout#4</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body { background-color: #fffde7;}
+        #wrap {width: 1200px; margin: 0 auto;}
+        header {width: 100%; height: 100px; background-color: #ffe082;}
+        article {width: 100%; height: 300px; background-color: #ffd54f;}
+        section {overflow: hidden; padding: 5%; width: 90%;background-color: #ffca28;}
+        section > div {width: 18%; margin: 1%; height: 170px; background-color: #ff9800; float: left; border-radius: 5px;}/*section 밑의 10개 박스*/
+        footer {width: 100%; height: 100px; background-color: #ffb300;}
+            
+            /* 화면 너비 0 ~ 1200px */
+            @media (max-width: 1220px) {
+                #wrap {width: 100%;}/*반응형에서 스크롤바가 절대 생기면 안 되기 때문에 width 100% 해준다*/
+                section > div {width: 23%;}/* 4개씩이므로 25%인데 margin 값 때문에 23%로 한다.*/
+                sectioin > div:nth-child(5n) {display: none;} /*나머지 2개 안 나오게 */
+            }
+            @media (max-width: 768px) {
+            section > div {width: 31.3333%;}/* 4개씩이므로 25%인데 margin 값 때문에 23%로 한다.*/
+            sectioin > div:nth-child(5) {display: block;} /*나머지 2개 안 나오게 */
+            }
+            @media (max-width: 580px) {
+            section > div {width: 48%;}/* 4개씩이므로 25%인데 margin 값 때문에 23%로 한다.*/
+            sectioin > div:nth-child(5n) {display: block;} /*나머지 2개 안 나오게 */
+            }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <article>article</article>
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
